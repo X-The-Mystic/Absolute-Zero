@@ -31,12 +31,28 @@ class Absolute-Zero:
         self.stop_attack_flag = False
         self.target_status = Active
         self.total_bytes_sent = 0
-
+        
         self.create_gui()
 
     def create_gui(self)
-        tk.Label(self.root, text="Enter the target's IPv4 address or the website domain name (one per line)").pack()
+        tk.Label(self.root, text="Enter the target's IPv4 address or the website domain name (one per line).").pack()
         self.target_text.pack()
+
+        tk.Label(self.root, text="Enter the number of IP ping reflectors to use.").pack()
+        self.ping_number.pack()
+
+        tk.Label(self.root, text="Enter the target's port number.").pack()
+        self.target_port.pack()
+
+        tk.Label(self.root, text="Enter the ICMP response packet size.").pack()
+        self.packet_size.pack()
+
+        tk.Label(self.root, text="Enter the duration of the ping attack (leave blank if nonstop).").pack
+        self.attack_duration.pack()
+
+        tk.Label(self.root, text="Enter the attack vector you would like to use.").pack
+
+            
 
 
 
