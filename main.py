@@ -50,7 +50,28 @@ class Absolute-Zero:
         tk.Label(self.root, text="Enter the duration of the ping attack (leave blank if nonstop).").pack
         self.attack_duration.pack()
 
-        tk.Label(self.root, text="Enter the attack vector you would like to use.").pack
+        tk.Label(self.root, text="Select the attack vector you would like to use.").pack
+        attack_vector_menu = tk.OptionMenu(self.root, self.attack_vector_entry, *self.attack_vectors)
+        attack_vector_menu.pack
+
+        self.progress_bar = ttk.progressbar(self.root, orient="horizontal", length=200, mode="determinate")
+        self.progress_bar.pack
+
+        self.attack_speed_label = tk.Label(self.root, text="Attack Speed: 0 GB/s")
+        self.attack_speed_label.pack()
+
+        self.attack_speed_label = tk.Label(self.root, text="Attack Speed: 0 GB/s")
+        self.attack_speed_label.pack()
+
+        tk.Button(self.root, text="Execute", command=self.execute_attack).pack()
+        tk.Button(self.root, text="Forcequit All" command=self.quit_attack).pack()
+
+    def start_attack(self):
+        target_text = self.get_target_text()
+        ping_number = self.
+        
+        
+        
 
             
 
