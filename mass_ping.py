@@ -36,6 +36,10 @@ class AbsoluteZero:
         
         self.create_gui()
 
+if __name__ == "__main__":
+    tool = AbsoluteZero()
+    tool.run()
+
 
 
 
