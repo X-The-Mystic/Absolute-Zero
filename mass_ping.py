@@ -10,7 +10,7 @@ import socket
 import scapy.all as scapy
 from concurrent.futures import ThreadPoolExecutor
 
-class Absolute-Zero:
+class AbsoluteZero:
     def __init__(self):
         self.root = tk.Tk()
         self.root.title("Absolute Zero -X-The-Mystic")
