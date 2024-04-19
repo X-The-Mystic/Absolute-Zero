@@ -94,6 +94,20 @@ class Absolute-Zero:
         if attack_vector == "PoD Attack":
             attack_thread = threading.Thread(target=self.ping_of_death_attack,
                                              args=(target_text, num_packets, attack_duration))
+
+        else:
+            print("Invalid attack vector selected.")
+            return
+
+        attack_thread.start()
+
+        self.attack_start_time = time.time()
+        self.total_bytes_sent = 0
+
+        self.attack_status_label.config(text="Attack Status: In Progress")
+        self.root.update()
+
+
         
         
 
