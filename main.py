@@ -107,7 +107,31 @@ class Absolute-Zero:
         self.attack_status_label.config(text="Attack Status: In Progress")
         self.root.update()
 
+        with ThreadPoolExecutor() as executor:
+            for target in target_text:
+                if self.execute_attack_flag:
+                    break
+                executor.submit(attack_vector, target, port, num_packets, packet_size, attack_duration)
+                time.sleep(1)
 
+                self.attack_speed_label.config(text=f"Attack Speed: {self.get_attack_speed():.2f} GB/s")
+                self.root.update()
+
+                self.progress_bar["value"] += 1
+                self.root.update()
+
+        self.attack_status_label.config(text="Attack Status: Not in Progress")
+        self.root.update()
+
+        print(f"Final attack speed: {self.get_attack_speed():.2f} GB/s")
+
+    def stop_attack(self)
+        self.stop_attack_flag = True
+
+    def 
+
+
+        
         
         
 
